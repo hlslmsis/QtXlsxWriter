@@ -4,7 +4,7 @@ DEPENDPATH += $$PWD
 QT += core gui gui-private
 !build_xlsx_lib:DEFINES += XLSX_NO_LIB
 
-if(!host_build|!cross_compile):if(c++11|c++14|c++1z) {
+if(c++11|c++14|c++1z) {
      c++1z:       cxxstd = CXX1Z
 }
 
