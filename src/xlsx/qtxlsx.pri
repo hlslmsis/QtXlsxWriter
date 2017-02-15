@@ -4,8 +4,9 @@ DEPENDPATH += $$PWD
 QT += core gui gui-private
 !build_xlsx_lib:DEFINES += XLSX_NO_LIB
 
-QMAKE_CXXFLAGS += -std=gnu++11
-QMAKE_CXXFLAGS -= -std=c++1z
+if(!host_build|!cross_compile):if(c++11|c++14|c++1z) {
+     c++1z:       cxxstd = CXX1Z
+}
 
 HEADERS += $$PWD/xlsxdocpropscore_p.h \
     $$PWD/xlsxdocpropsapp_p.h \
